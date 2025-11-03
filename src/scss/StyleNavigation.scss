@@ -1,0 +1,77 @@
+// Переменные
+$navigation-bg: rgba(255, 255, 255, 0.9);
+$navigation-border: #e5e7eb;
+$navigation-text-primary: #1f2937;
+$navigation-text-secondary: #374151;
+
+// Брейкпоинты
+$breakpoint-md: 768px;
+
+// Отступы
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+
+// Размеры шрифтов
+$font-base: 1rem;
+$font-xl: 1.25rem;
+$font-2xl: 1.5rem;
+
+// Основные стили
+.navigation { /* ← ИЗМЕНИЛ .header на .navigation */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $navigation-bg;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid $navigation-border;
+  z-index: 1000;
+
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+
+    @media (min-width: $breakpoint-md) {
+      height: 80px;
+      padding: 0 $spacing-lg;
+    }
+  }
+
+  .logo {
+    font-size: $font-xl;
+    color: $navigation-text-primary;
+    font-weight: 700;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-2xl;
+    }
+  }
+
+  .nav {
+    display: none;
+
+    @media (min-width: $breakpoint-md) {
+      display: flex;
+      align-items: center;
+      gap: $spacing-xl;
+    }
+
+    a {
+      color: $navigation-text-secondary;
+      text-decoration: none;
+      font-size: $font-base;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: $navigation-text-primary;
+      }
+    }
+  }
+}

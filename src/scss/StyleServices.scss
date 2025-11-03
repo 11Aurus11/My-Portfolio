@@ -1,0 +1,151 @@
+// Переменные
+$services-bg: #ffffff;
+$card-bg: #ffffff;
+$text-primary: #1f2937;
+$text-secondary: #6b7280;
+$accent-start: #7c3aed;
+$accent-end: #3b82f6;
+$white: #ffffff;
+
+// Брейкпоинты
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+
+// Отступы
+$spacing-md: 0.75rem;
+$spacing-lg: 1rem;
+$spacing-xl: 1.5rem;
+$spacing-xxl: 2rem;
+$spacing-xxxl: 3rem;
+$spacing-xxxxl: 4rem;
+$spacing-xxxxxl: 6rem;
+
+// Размеры шрифтов
+$font-xs: 0.875rem;
+$font-sm: 1rem;
+$font-lg: 1.125rem;
+$font-xl: 1.25rem;
+$font-2xl: 1.5rem;
+$font-3xl: 2rem;
+$font-4xl: 2.5rem;
+$font-5xl: 3rem;
+
+// Основные стили
+.services {
+  padding: $spacing-xxxxl 0;
+  background: $services-bg;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-xxxxxl 0;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 $spacing-lg;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: $spacing-xxxl;
+
+    @media (min-width: $breakpoint-md) {
+      margin-bottom: $spacing-xxxxl;
+    }
+  }
+
+  .title {
+    font-size: $font-3xl;
+    line-height: 1.2;
+    color: $text-primary;
+    margin-bottom: $spacing-lg;
+    font-weight: 700;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-4xl;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      font-size: $font-5xl;
+    }
+  }
+
+  .description {
+    font-size: $font-lg;
+    line-height: 1.6;
+    color: $text-secondary;
+    max-width: 42rem;
+    margin: 0 auto;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-xl;
+    }
+  }
+
+  .grid {
+    display: grid;
+    gap: $spacing-xxxl;
+
+    @media (min-width: $breakpoint-sm) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-xxl;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+// Стили карточек
+.card {
+  background: $card-bg;
+  border-radius: 1rem;
+  padding: $spacing-xxl;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .iconWrapper {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, $accent-start 0%, $accent-end 100%);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: $spacing-lg;
+
+    @media (min-width: $breakpoint-md) {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+  }
+
+  .cardTitle {
+    font-size: $font-xl;
+    color: $text-primary;
+    margin-bottom: $spacing-md;
+    font-weight: 600;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-2xl;
+    }
+  }
+
+  .cardDescription {
+    font-size: $font-xs;
+    line-height: 1.6;
+    color: $text-secondary;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-sm;
+    }
+  }
+}

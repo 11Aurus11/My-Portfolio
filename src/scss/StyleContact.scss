@@ -1,0 +1,265 @@
+// Переменные
+$primary: #7c3aed;
+$secondary: #3b82f6;
+$text-dark: #1f2937;
+$text-gray: #6b7280;
+$text-light: #9ca3af;
+$border: #e5e7eb;
+$background: #ffffff;
+$background-gray: #f9fafb;
+$white: #ffffff;
+
+// Брейкпоинты
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+// Отступы
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+$spacing-xxl: 4rem;
+$spacing-xxxl: 6rem;
+
+// Размеры шрифтов
+$font-base: 1rem;
+$font-lg: 1.125rem;
+$font-xl: 1.25rem;
+$font-2xl: 1.5rem;
+$font-3xl: 2rem;
+$font-4xl: 2.5rem;
+$font-5xl: 3rem;
+
+// Основные стили
+.contact {
+  padding: $spacing-xxl 0;
+  background: $background;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-xxxl 0;
+  }
+
+  .container {
+    width: 100%;
+    max-width: $breakpoint-xl;
+    margin: 0 auto;
+    padding: 0 $spacing-sm;
+
+    @media (min-width: $breakpoint-md) {
+      padding: 0 $spacing-md;
+    }
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+
+    @media (min-width: $breakpoint-md) {
+      margin-bottom: $spacing-xxl;
+    }
+  }
+
+  .title {
+    font-size: $font-3xl;
+    line-height: 1.2;
+    color: $text-dark;
+    margin-bottom: $spacing-sm;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-4xl;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      font-size: $font-5xl;
+    }
+  }
+
+  .description {
+    font-size: $font-lg;
+    line-height: 1.6;
+    color: $text-gray;
+    max-width: 42rem;
+    margin: 0 auto;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-xl;
+    }
+  }
+
+  .grid {
+    display: grid;
+    gap: $spacing-xl;
+    max-width: 80rem;
+    margin: 0 auto;
+
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-xl;
+    }
+  }
+}
+
+// Форма
+.form {
+  &Group {
+    margin-bottom: $spacing-md;
+
+    label {
+      display: block;
+      margin-bottom: $spacing-xs;
+      color: $text-dark;
+      font-weight: 500;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.75rem $spacing-sm;
+      border: 2px solid $border;
+      border-radius: 0.5rem;
+      font-size: $font-base;
+      font-family: inherit;
+      transition: border-color 0.15s ease-in-out;
+
+      &:focus {
+        outline: none;
+        border-color: $primary;
+      }
+
+      &::placeholder {
+        color: $text-light;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+  }
+}
+
+// Кнопка
+.submitButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  background: linear-gradient(135deg, $primary 0%, $secondary 100%);
+  color: $white;
+  padding: $spacing-sm $spacing-xl;
+  font-size: $font-base;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-lg;
+  }
+}
+
+// Контактная информация
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+
+  @media (min-width: $breakpoint-md) {
+    gap: $spacing-xl;
+  }
+}
+
+.infoCard {
+  border-radius: 1.5rem;
+  padding: $spacing-lg;
+  background: linear-gradient(135deg, $primary 0%, $secondary 100%);
+  color: $white;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-xl;
+  }
+
+  h3 {
+    font-size: $font-xl;
+    margin-bottom: $spacing-md;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-2xl;
+    }
+  }
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+  }
+}
+
+.infoContent {
+  p {
+    &:first-child {
+      opacity: 0.9;
+      font-size: 0.875rem;
+      margin-bottom: $spacing-xs;
+    }
+
+    &:last-child {
+      font-size: $font-lg;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: $font-xl;
+      }
+    }
+  }
+}
+
+.scheduleCard {
+  border-radius: 1.5rem;
+  padding: $spacing-lg;
+  background: $background-gray;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-xl;
+  }
+
+  h3 {
+    font-size: $font-lg;
+    color: $text-dark;
+    margin-bottom: $spacing-sm;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-xl;
+    }
+  }
+
+  p {
+    color: $text-gray;
+    margin-bottom: $spacing-xs;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

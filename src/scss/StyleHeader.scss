@@ -1,0 +1,228 @@
+// Переменные
+$hero-bg-start: #f9fafb;
+$hero-bg-end: #f3f4f6;
+$hero-text-primary: #1f2937;
+$hero-text-secondary: #6b7280;
+$hero-border: #e5e7eb;
+$hero-accent: #7c3aed;
+$hero-secondary: #3b82f6;
+$hero-white: #ffffff;
+
+// Брейкпоинты
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+// Отступы
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+$spacing-xxl: 5rem;
+
+// Размеры шрифтов
+$font-base: 1rem;
+$font-lg: 1.125rem;
+$font-xl: 1.25rem;
+$font-2xl: 1.5rem;
+$font-3xl: 2.25rem;
+$font-4xl: 3rem;
+$font-5xl: 3.75rem;
+
+// Основные стили
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, $hero-bg-start 0%, $hero-bg-end 100%);
+  padding-top: 64px;
+
+  @media (min-width: $breakpoint-md) {
+    padding-top: 80px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: $breakpoint-xl;
+    margin: 0 auto;
+    padding: $spacing-xl $spacing-sm;
+
+    @media (min-width: $breakpoint-md) {
+      padding: $spacing-xxl $spacing-md;
+    }
+  }
+
+  .grid {
+    display: grid;
+    gap: $spacing-xl;
+    align-items: center;
+
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-xl;
+    }
+  }
+
+  .content {
+    text-align: center;
+
+    @media (min-width: $breakpoint-lg) {
+      text-align: left;
+    }
+  }
+
+  .title {
+    font-size: $font-3xl;
+    line-height: 1.2;
+    color: $hero-text-primary;
+    margin-bottom: $spacing-md;
+    font-weight: 700;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-4xl;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      font-size: $font-5xl;
+    }
+  }
+
+  .description {
+    font-size: $font-lg;
+    line-height: 1.6;
+    color: $hero-text-secondary;
+    margin-bottom: $spacing-xl;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-xl;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    align-items: stretch;
+
+    @media (min-width: $breakpoint-sm) {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      justify-content: flex-start;
+    }
+  }
+
+  .primaryButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    font-size: $font-base;
+    background: linear-gradient(135deg, $hero-accent 0%, $hero-secondary 100%);
+    color: $hero-white;
+    border: none;
+    gap: $spacing-xs;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-lg;
+      padding: 1rem 2.5rem;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+  }
+
+  .secondaryButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    font-size: $font-base;
+    background: $hero-white;
+    color: $hero-text-primary;
+    border: 2px solid $hero-border;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-lg;
+      padding: 1rem 2.5rem;
+    }
+
+    &:hover {
+      border-color: $hero-accent;
+      color: $hero-accent;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+  }
+
+  .imageWrapper {
+    position: relative;
+
+    .imageContainer {
+      position: relative;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, $hero-accent 0%, $hero-secondary 100%);
+        opacity: 0.2;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+// Адаптивность для очень маленьких экранов
+@media (max-width: 380px) {
+  .hero {
+    .buttons {
+      flex-direction: column;
+    }
+
+    .primaryButton,
+    .secondaryButton {
+      width: 100%;
+    }
+  }
+}

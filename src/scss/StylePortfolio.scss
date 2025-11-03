@@ -1,0 +1,206 @@
+// Переменные
+$portfolio-bg: #f9fafb;
+$portfolio-card-bg: #ffffff;
+$portfolio-text-primary: #1f2937;
+$portfolio-text-secondary: #6b7280;
+$portfolio-accent: #7c3aed;
+$portfolio-tag-bg: #f3f4f6;
+$portfolio-tag-text: #374151;
+
+// Брейкпоинты
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+// Отступы
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 0.75rem;
+$spacing-lg: 1rem;
+$spacing-xl: 1.5rem;
+$spacing-xxl: 2rem;
+$spacing-xxxl: 3rem;
+$spacing-xxxxl: 4rem;
+$spacing-xxxxxl: 6rem;
+
+// Размеры шрифтов
+$font-xs: 0.75rem;
+$font-sm: 0.875rem;
+$font-base: 1rem;
+$font-lg: 1.125rem;
+$font-xl: 1.25rem;
+$font-2xl: 1.5rem;
+$font-3xl: 2rem;
+$font-4xl: 2.5rem;
+$font-5xl: 3rem;
+
+// Основные стили
+.portfolio {
+  padding: $spacing-xxxxl 0;
+  background: $portfolio-bg;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-xxxxxl 0;
+  }
+
+  .container {
+    width: 100%;
+    max-width: $breakpoint-xl;
+    margin: 0 auto;
+    padding: 0 $spacing-lg;
+
+    @media (min-width: $breakpoint-md) {
+      padding: 0 $spacing-xl;
+    }
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: $spacing-xxxl;
+
+    @media (min-width: $breakpoint-md) {
+      margin-bottom: $spacing-xxxxl;
+    }
+  }
+
+  .title {
+    font-size: $font-3xl;
+    line-height: 1.2;
+    color: $portfolio-text-primary;
+    margin-bottom: $spacing-lg;
+    font-weight: 700;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-4xl;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      font-size: $font-5xl;
+    }
+  }
+
+  .description {
+    font-size: $font-lg;
+    line-height: 1.6;
+    color: $portfolio-text-secondary;
+    max-width: 42rem;
+    margin: 0 auto;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-xl;
+    }
+  }
+
+  .grid {
+    display: grid;
+    gap: $spacing-xxxl;
+
+    @media (min-width: $breakpoint-sm) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-xxl;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+// Стили карточек
+.cards {
+  background: $portfolio-card-bg;
+  border-radius: 1rem;
+  padding: 0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    .imageWrapper img {
+      transform: scale(1.1);
+    }
+
+    .overlay {
+      opacity: 1;
+    }
+  }
+
+  .imageWrapper {
+    position: relative;
+    overflow: hidden;
+    height: 12rem;
+
+    @media (min-width: $breakpoint-md) {
+      height: 16rem;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+  }
+
+  .content {
+    padding: $spacing-lg;
+
+    @media (min-width: $breakpoint-md) {
+      padding: $spacing-xxxl;
+    }
+  }
+
+  .category {
+    font-size: $font-sm;
+    color: $portfolio-accent;
+    margin-bottom: $spacing-sm;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .projectTitle {
+    font-size: $font-lg;
+    color: $portfolio-text-primary;
+    margin-bottom: $spacing-md;
+    font-weight: 600;
+    line-height: 1.4;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-xl;
+    }
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+  }
+
+  .tag {
+    font-size: $font-xs;
+    padding: $spacing-xs $spacing-md;
+    background: $portfolio-tag-bg;
+    color: $portfolio-tag-text;
+    border-radius: 0.375rem;
+    font-weight: 500;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-sm;
+    }
+  }
+}

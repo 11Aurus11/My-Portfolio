@@ -1,0 +1,162 @@
+// Переменные
+$footer-bg: #1f2937;
+$footer-text: #ffffff;
+$footer-text-muted: #9ca3af;
+$footer-border: #374151;
+$footer-accent: #7c3aed;
+$footer-social-bg: #374151;
+
+// Брейкпоинты
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+// Отступы
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+$spacing-xxl: 4rem;
+
+// Размеры шрифтов
+$font-xs: 0.875rem;
+$font-sm: 1rem;
+$font-lg: 1.125rem;
+$font-xl: 1.25rem;
+$font-2xl: 1.5rem;
+
+// Основные стили
+.footer {
+  background: $footer-bg;
+  color: $footer-text;
+  padding: $spacing-xl 0;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-xxl 0;
+  }
+
+  .container {
+    width: 100%;
+    max-width: $breakpoint-xl;
+    margin: 0 auto;
+    padding: 0 $spacing-sm;
+
+    @media (min-width: $breakpoint-md) {
+      padding: 0 $spacing-md;
+    }
+  }
+
+  .grid {
+    display: grid;
+    gap: $spacing-xl;
+    margin-bottom: $spacing-xl;
+
+    @media (min-width: $breakpoint-sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: repeat(4, 1fr);
+      margin-bottom: $spacing-xl;
+    }
+  }
+
+  .section {
+    h3,
+    h4 {
+      font-size: $font-xl;
+      margin-bottom: $spacing-sm;
+      font-weight: 600;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: $font-2xl;
+      }
+    }
+
+    p {
+      color: $footer-text-muted;
+      font-size: $font-xs;
+      line-height: 1.6;
+      margin-bottom: $spacing-sm;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: $font-sm;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: $spacing-xs;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        a {
+          color: $footer-text-muted;
+          font-size: $font-xs;
+          text-decoration: none;
+          transition: color 0.3s ease-in-out;
+
+          @media (min-width: $breakpoint-md) {
+            font-size: $font-sm;
+          }
+
+          &:hover {
+            color: $footer-text;
+          }
+        }
+      }
+    }
+  }
+
+  .socialLinks {
+    display: flex;
+    gap: $spacing-sm;
+    margin-top: $spacing-sm;
+
+    a {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: $footer-social-bg;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease-in-out;
+
+      svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        fill: currentColor;
+      }
+
+      &:hover {
+        background: $footer-accent;
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  .bottom {
+    border-top: 1px solid $footer-border;
+    padding-top: $spacing-xl;
+    text-align: center;
+
+    p {
+      color: $footer-text-muted;
+      font-size: $font-xs;
+      margin: 0;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: $font-sm;
+      }
+    }
+  }
+}
