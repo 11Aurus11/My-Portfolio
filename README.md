@@ -49,3 +49,4 @@ npm run build
 
 # Превью собранной версии
 npm run preview
+
